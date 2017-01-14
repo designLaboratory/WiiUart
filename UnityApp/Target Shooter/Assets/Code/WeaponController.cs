@@ -63,7 +63,9 @@ public class WeaponController : MonoBehaviour
     void MoveBullet()
     {
         GameObject newBullet = Instantiate(bullet);
-        newBullet.transform.position = Camera.main.ScreenToWorldPoint(bullet.transform.position);
-        newBullet.GetComponent<Rigidbody>().velocity = Camera.main.transform.forward * 200f;
+        newBullet.transform.SetParent(weaponTransform,false);
+        //newBullet.transform.localPosition = bullet.transform.localPosition;
+        newBullet.SetActive(true);
+        newBullet.GetComponent<Rigidbody>().velocity = Camera.main.transform.forward * 800f;
     }
 }

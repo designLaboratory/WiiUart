@@ -6,9 +6,14 @@ public class BulletController : MonoBehaviour {
     void OnCollisionEnter(Collision col)
     {
         if (col.gameObject.tag == "Target")
-        {
-            Destroy(col.gameObject);
-            Destroy(gameObject);
-        }
+            DestroyObjects(col);
+    }
+
+    void DestroyObjects(Collision col)
+    {
+        Destroy(col.transform.parent.gameObject);
+        Destroy(gameObject);
+        TargetCounterController.UpdateCounter(1);
+        TargetSpawner.RespawnTarget();
     }
 }
