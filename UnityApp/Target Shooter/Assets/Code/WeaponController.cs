@@ -39,7 +39,6 @@ public class WeaponController : MonoBehaviour
         mousePos.x = mousePos.x - objectPos.x;
         mousePos.y = mousePos.y - objectPos.y;
 
-        //float angleX = -Mathf.Atan2(mousePos.y, mousePos.x) * Mathf.Rad2Deg + 90;
         float angleY = Mathf.Atan2(mousePos.y, -mousePos.x) * Mathf.Rad2Deg + 90;
         weaponTransform.rotation = Quaternion.Euler(new Vector3(0, angleY, 0));
     }
@@ -63,7 +62,7 @@ public class WeaponController : MonoBehaviour
     void MoveBullet()
     {
         GameObject newBullet = Instantiate(bullet);
-        newBullet.transform.SetParent(weaponTransform,false);
+        newBullet.transform.SetParent(weaponTransform, false);
         //newBullet.transform.localPosition = bullet.transform.localPosition;
         newBullet.SetActive(true);
         newBullet.GetComponent<Rigidbody>().velocity = Camera.main.transform.forward * 800f;

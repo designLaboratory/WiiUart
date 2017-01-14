@@ -1,9 +1,10 @@
 ﻿using UnityEngine;
-using System.Collections;
+using System.Collections.Generic;
 
 public class TargetSpawner : MonoBehaviour {
 
     [SerializeField] GameObject target;
+    static System.Random rand = new System.Random();
     static TargetSpawner instance;
 
     public static void RespawnTarget()
@@ -14,9 +15,8 @@ public class TargetSpawner : MonoBehaviour {
 
     static Vector3 GetRandomPosition(float y)
     {
-        System.Random rand = new System.Random(10);
-        float x = 50 * rand.Next(); float z = 500 - 50 * rand.Next();
-        return new Vector3(x, y, 100 + z);
+        float x = 50 * rand.Next(0, 10); float z = 50 * rand.Next(3, 10);
+        return new Vector3(x, y, z);
     }
 
     void Awake()

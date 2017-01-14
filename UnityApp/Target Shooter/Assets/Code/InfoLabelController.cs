@@ -5,6 +5,7 @@ using UnityEngine.UI;
 public class InfoLabelController : MonoBehaviour {
 
     [SerializeField] Text infoLabel;
+    [SerializeField] WeaponController weaponController;
     static InfoLabelController instance;
     const string LABEL = "Time is up. Your result: {0} targets hit.";
 
@@ -12,6 +13,7 @@ public class InfoLabelController : MonoBehaviour {
     {
         instance.infoLabel.text = string.Format(LABEL, TargetCounterController.GetCounterValue());
         instance.infoLabel.gameObject.SetActive(true);
+        instance.weaponController.enabled = false;
     }
 
     void Awake()
