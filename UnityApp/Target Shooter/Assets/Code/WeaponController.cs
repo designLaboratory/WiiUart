@@ -63,7 +63,6 @@ public class WeaponController : MonoBehaviour
     {
         GameObject newBullet = Instantiate(bullet);
         newBullet.transform.SetParent(weaponTransform, false);
-        //newBullet.transform.localPosition = bullet.transform.localPosition;
         newBullet.SetActive(true);
         newBullet.GetComponent<Rigidbody>().velocity = Camera.main.transform.forward * 800f;
     }

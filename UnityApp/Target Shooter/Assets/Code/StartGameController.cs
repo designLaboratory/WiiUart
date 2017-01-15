@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
 
 public class StartGameController : MonoBehaviour {
 
@@ -22,7 +24,17 @@ public class StartGameController : MonoBehaviour {
         InfoLabelController.Hide();
         TimeLeftController.gameStarted = true;
         weaponController.enabled = true;
+        TargetCounterController.ClearCounter();
+        if (timeLeftController.GetCurrentTime() == "0:00")
+            DestroyOldTargets();
         timeLeftController.SetStartTime();
-        Application.LoadLevel(0);
+    }
+
+    void DestroyOldTargets()
+    {
+        List<GameObject> targets = GameObject.FindGameObjectsWithTag("Target").ToList();
+        foreach(GameObject t in targets) Destroy(t);
+        for (int i = 0; i < 4; i++)
+            TargetSpawner.RespawnTarget();
     }
 }

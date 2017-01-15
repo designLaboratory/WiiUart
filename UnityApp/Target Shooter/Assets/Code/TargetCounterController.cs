@@ -19,6 +19,8 @@ public class TargetCounterController : MonoBehaviour {
         return int.Parse(instance.hitCounterLabel.text.Substring(13, instance.hitCounterLabel.text.Length - 13));
     }
 
+    public static void ClearCounter() { instance.hitCounterLabel.text = LABEL + "0"; }
+
     void Awake()
     {
         instance = this;

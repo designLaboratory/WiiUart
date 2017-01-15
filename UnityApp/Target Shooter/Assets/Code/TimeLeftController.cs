@@ -11,6 +11,8 @@ public class TimeLeftController : MonoBehaviour {
     float delay;
 
     public void SetStartTime() { timeLeftLabel.text = LABEL + "1:00"; }
+
+    public string GetCurrentTime() { return timeLeftLabel.text.Substring(11, 4); }
     
     void Update()
     {
