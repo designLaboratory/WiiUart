@@ -7,12 +7,14 @@ public class TimeLeftController : MonoBehaviour {
 
     [SerializeField] Text timeLeftLabel;
     const string LABEL = "TIME LEFT: ";
-    public static bool isDone;
+    public static bool gameStarted;
     float delay;
+
+    public void SetStartTime() { timeLeftLabel.text = LABEL + "1:00"; }
     
     void Update()
     {
-        if (delay >= 1f && !isDone)
+        if (delay >= 1f && gameStarted)
             timeLeftLabel.text = LABEL + GetUpdatedTime();
         else
             delay += Time.deltaTime;
@@ -23,7 +25,7 @@ public class TimeLeftController : MonoBehaviour {
         List<int> time = timeLeftLabel.text.Substring(11, 4).Split(new string[] { ":" }, System.StringSplitOptions.RemoveEmptyEntries).Select(s => int.Parse(s)).ToList();
         if (time[0] == 1 && time[1] == 0) { time[0]--; time[1] = 59; }
         else time[1]--; delay = 0;
-        if (time[0] == 0 && time[1] == 0) { isDone = true; InfoLabelController.ShowInfo(); }
+        if (time[0] == 0 && time[1] == 0) { gameStarted = false; InfoLabelController.ShowInfo(); }
         return time[0] + ":" + GetFixedSeconds(time[1]);
     }
 
