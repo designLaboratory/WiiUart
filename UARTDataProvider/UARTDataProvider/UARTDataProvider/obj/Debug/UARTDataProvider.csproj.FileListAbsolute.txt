@@ -20,3 +20,16 @@ C:\Users\patrol17\Desktop\UARTDataProvider\UARTDataProvider\bin\Debug\UARTDataPr
 C:\Users\patrol17\Desktop\UARTDataProvider\UARTDataProvider\bin\Debug\UARTDataProvider.application
 C:\Users\patrol17\Desktop\UARTDataProvider\UARTDataProvider\obj\Debug\UARTDataProvider.exe.manifest
 C:\Users\patrol17\Desktop\UARTDataProvider\UARTDataProvider\obj\Debug\UARTDataProvider.application
+C:\Users\patrol17\Desktop\WiiUart_SM2_Project\UARTDataProvider\UARTDataProvider\UARTDataProvider\bin\Debug\UARTDataProvider.exe.config
+C:\Users\patrol17\Desktop\WiiUart_SM2_Project\UARTDataProvider\UARTDataProvider\UARTDataProvider\obj\Debug\UARTDataProvider.exe
+C:\Users\patrol17\Desktop\WiiUart_SM2_Project\UARTDataProvider\UARTDataProvider\UARTDataProvider\obj\Debug\UARTDataProvider.pdb
+C:\Users\patrol17\Desktop\WiiUart_SM2_Project\UARTDataProvider\UARTDataProvider\UARTDataProvider\bin\Debug\UARTDataProvider.exe.manifest
+C:\Users\patrol17\Desktop\WiiUart_SM2_Project\UARTDataProvider\UARTDataProvider\UARTDataProvider\bin\Debug\UARTDataProvider.application
+C:\Users\patrol17\Desktop\WiiUart_SM2_Project\UARTDataProvider\UARTDataProvider\UARTDataProvider\bin\Debug\UARTDataProvider.exe
+C:\Users\patrol17\Desktop\WiiUart_SM2_Project\UARTDataProvider\UARTDataProvider\UARTDataProvider\bin\Debug\UARTDataProvider.pdb
+C:\Users\patrol17\Desktop\WiiUart_SM2_Project\UARTDataProvider\UARTDataProvider\UARTDataProvider\obj\Debug\UARTDataProvider.csprojResolveAssemblyReference.cache
+C:\Users\patrol17\Desktop\WiiUart_SM2_Project\UARTDataProvider\UARTDataProvider\UARTDataProvider\obj\Debug\UARTDataProvider.Form1.resources
+C:\Users\patrol17\Desktop\WiiUart_SM2_Project\UARTDataProvider\UARTDataProvider\UARTDataProvider\obj\Debug\UARTDataProvider.Properties.Resources.resources
+C:\Users\patrol17\Desktop\WiiUart_SM2_Project\UARTDataProvider\UARTDataProvider\UARTDataProvider\obj\Debug\UARTDataProvider.csproj.GenerateResource.Cache
+C:\Users\patrol17\Desktop\WiiUart_SM2_Project\UARTDataProvider\UARTDataProvider\UARTDataProvider\obj\Debug\UARTDataProvider.exe.manifest
+C:\Users\patrol17\Desktop\WiiUart_SM2_Project\UARTDataProvider\UARTDataProvider\UARTDataProvider\obj\Debug\UARTDataProvider.application

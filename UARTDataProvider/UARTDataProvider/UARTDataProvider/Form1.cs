@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,7 +15,7 @@ namespace UARTDataProvider
 {
     public partial class Form1 : Form
     {
-        readonly List<int> baudRates = new List<int>() { 300, 600, 1200, 2400, 4800, 9600, 14400, 19200 };
+        readonly List<int> baudRates = new List<int>() { 300, 600, 1200, 2400, 4800, 9600, 14400, 19200, 38400, 57600, 115200 };
 
         SerialPort comPort = new SerialPort();
 
@@ -60,8 +62,14 @@ namespace UARTDataProvider
 
         private void GetData()
         {
-            List<string> comData = comPort.ReadExisting().Split(new string[] { "\r\n" }, StringSplitOptions.RemoveEmptyEntries).ToList();
-            foreach (string s in comData) if (s.Length >= 4) data.Items.Add(s); 
+            List<string> comData = comPort.ReadExisting().Split(new string[] {"\r\n"}, StringSplitOptions.RemoveEmptyEntries).ToList();
+            comData = comData.Where(s => (s.Substring(0, 1) == "x" && s.Substring(s.Length - 1, 1) == "F")).ToList();
+            foreach (string s in comData) { DisplayData(s); ConvertData(s);}
+        }
+
+        private void DisplayData(string s)
+        {
+            data.Items.Add(s); data.TopIndex = data.Items.Count - 1;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -71,7 +79,6 @@ namespace UARTDataProvider
 
         private void button2_Click(object sender, EventArgs e)
         {
-
             try { comPort.Open(); timer1.Enabled = true; }
             catch { MessageBox.Show("Connection Error! Please check your connection."); }
             comPort.RtsEnable = true;
@@ -82,6 +89,31 @@ namespace UARTDataProvider
         {
             dataGridView1.Rows[0].SetValues(
                 new object[] { comPort.PortName, comPort.BaudRate, comPort.DataBits, comPort.StopBits, comPort.Parity, comPort.Handshake, comPort.ReadTimeout });
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            StartApp();
+        }
+
+        private void StartApp()
+        {
+            Process.Start(new ProcessStartInfo() {FileName = Application.StartupPath + "UnityApp\\Target Shooter.exe"});
+        }
+
+        private void ConvertData(string content)
+        {
+            List<string> temp = content.Split(new string[] {";"}, System.StringSplitOptions.RemoveEmptyEntries).ToList();
+            temp = temp.Where(s => s != "F").ToList();
+            temp = temp.Select(s => s.Remove(0, 2)).ToList();
+            SaveToFile(temp);
+        }
+
+        private void SaveToFile(List<string> content)
+        {
+            //File.WriteAllLines(Application.StartupPath + "UnityApp\\TargetShooter_Data\\Resources\\outputData.csv", content.ToArray());
+            try { File.WriteAllLines("C:\\Users\\patrol17\\Desktop\\outputData.csv", content.ToArray()); }
+            catch { return; }
         }
     }
 }
