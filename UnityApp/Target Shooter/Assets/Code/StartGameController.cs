@@ -25,6 +25,7 @@ public class StartGameController : MonoBehaviour {
         TimeLeftController.gameStarted = true;
         weaponController.enabled = true;
         TargetCounterController.ClearCounter();
+        AmmoCounterController.ClearCounter();
         if (timeLeftController.GetCurrentTime() == "0:00")
             DestroyOldTargets();
         timeLeftController.SetStartTime();

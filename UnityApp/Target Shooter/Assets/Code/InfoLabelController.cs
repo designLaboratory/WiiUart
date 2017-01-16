@@ -9,6 +9,7 @@ public class InfoLabelController : MonoBehaviour {
     static InfoLabelController instance;
     const string LABEL = "Time is up. Your result: {0} targets hit.";
     const string START_GAME = "Press 'Space' to start...";
+    const string RELOAD_AMMO = "No ammo!! Reload by tilting controller forward...";
 
     public static void ShowInfo()
     {
@@ -16,6 +17,12 @@ public class InfoLabelController : MonoBehaviour {
         instance.infoLabel.gameObject.SetActive(true);
         instance.weaponController.enabled = false;
         instance.Invoke("ShowNewGameInfo", 3f);
+    }
+
+    public static void ShowReloadInfo()
+    {
+        instance.infoLabel.text = RELOAD_AMMO;
+        instance.infoLabel.gameObject.SetActive(true);
     }
 
     public static void ShowStartGameInfo()
