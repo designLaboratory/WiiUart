@@ -17,7 +17,7 @@ public class WeaponController : MonoBehaviour
     {
         if(CheckDelay()) SetPosition();
 	    if (Input.GetMouseButtonDown(0) && AmmoCounterController.GetCounterValue() > 0) Shoot();
-        if(AmmoCounterController.GetCounterValue()==0) TryReloading();
+	    if (AmmoCounterController.GetCounterValue() == 0) TryReloading();
     }
 
     bool CheckDelay()
@@ -71,7 +71,7 @@ public class WeaponController : MonoBehaviour
 
     void GetDataFromFile()
     {
-        try { data = System.IO.File.ReadAllLines("C:\\Users\\patrol17\\Desktop\\outputData.csv").ToList(); }
+        try { data = System.IO.File.ReadAllLines((Application.dataPath + "/Resources/outputData.csv").Replace("/", "\\")).ToList(); }
         catch { return; }
     }
 }
