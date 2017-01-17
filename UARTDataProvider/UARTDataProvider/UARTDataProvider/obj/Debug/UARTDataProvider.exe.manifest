@@ -42,14 +42,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="UARTDataProvider.exe" size="14848">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="UARTDataProvider.exe" size="15360">
       <assemblyIdentity name="UARTDataProvider" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>kCp9MBq4MHL4ecp8E7P8Uj+1Ih8awq2YR2fpsoxHLhM=</dsig:DigestValue>
+        <dsig:DigestValue>RHIT29lBTVlYJejOPYloZN2IoEHMpBuyuBi5fbcxa2o=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

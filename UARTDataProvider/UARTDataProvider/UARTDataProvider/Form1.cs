@@ -98,7 +98,7 @@ namespace UARTDataProvider
 
         private void StartApp()
         {
-            Process.Start(new ProcessStartInfo() {FileName = Application.StartupPath + "UnityApp\\Target Shooter.exe"});
+            Process.Start(new ProcessStartInfo() {FileName = Application.StartupPath + "TargetShooterGame\\Target Shooter.exe"});
         }
 
         private void ConvertData(string content)
@@ -111,8 +111,7 @@ namespace UARTDataProvider
 
         private void SaveToFile(List<string> content)
         {
-            //File.WriteAllLines(Application.StartupPath + "UnityApp\\TargetShooter_Data\\Resources\\outputData.csv", content.ToArray());
-            try { File.WriteAllLines("C:\\Users\\patrol17\\Desktop\\outputData.csv", content.ToArray()); }
+            try { File.WriteAllLines(Application.StartupPath + "TargetShooterGame\\TargetShooter_Data\\Resources\\outputData.csv", content.ToArray()); }
             catch { return; }
         }
     }

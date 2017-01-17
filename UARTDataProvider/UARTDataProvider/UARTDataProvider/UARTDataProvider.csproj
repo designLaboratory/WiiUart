@@ -12,7 +12,7 @@
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <IsWebBootstrapper>false</IsWebBootstrapper>
-    <PublishUrl>C:\Users\patrol17\Desktop\UARTDataProviderApplication\</PublishUrl>
+    <PublishUrl>C:\Users\patrol17\Desktop\WiiUart_SM2_Project\UARTDataProvider\UARTDataProviderApplication\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
     <UpdateEnabled>false</UpdateEnabled>
