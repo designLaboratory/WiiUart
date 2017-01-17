@@ -44,6 +44,7 @@
             this.readtimeout = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
+            this.path = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -68,7 +69,7 @@
             // data
             // 
             this.data.FormattingEnabled = true;
-            this.data.Location = new System.Drawing.Point(12, 162);
+            this.data.Location = new System.Drawing.Point(12, 192);
             this.data.Name = "data";
             this.data.Size = new System.Drawing.Size(732, 173);
             this.data.TabIndex = 2;
@@ -158,7 +159,7 @@
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button2.Location = new System.Drawing.Point(12, 126);
+            this.button2.Location = new System.Drawing.Point(12, 156);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(732, 30);
             this.button2.TabIndex = 5;
@@ -169,7 +170,7 @@
             // button3
             // 
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button3.Location = new System.Drawing.Point(12, 341);
+            this.button3.Location = new System.Drawing.Point(12, 371);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(732, 30);
             this.button3.TabIndex = 6;
@@ -177,11 +178,21 @@
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
+            // path
+            // 
+            this.path.Location = new System.Drawing.Point(12, 119);
+            this.path.Name = "path";
+            this.path.Size = new System.Drawing.Size(563, 20);
+            this.path.TabIndex = 7;
+            this.path.Text = "Target Shooter Data Folder Path HERE";
+            this.path.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(756, 376);
+            this.ClientSize = new System.Drawing.Size(756, 417);
+            this.Controls.Add(this.path);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.dataGridView1);
@@ -193,6 +204,7 @@
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -213,6 +225,7 @@
         private System.Windows.Forms.Button button2;
         public System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button button3;
+        public System.Windows.Forms.TextBox path;
     }
 }
 

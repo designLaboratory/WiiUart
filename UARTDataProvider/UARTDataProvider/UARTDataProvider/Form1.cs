@@ -98,7 +98,11 @@ namespace UARTDataProvider
 
         private void StartApp()
         {
-            Process.Start(new ProcessStartInfo() {FileName = Application.StartupPath + "TargetShooterGame\\Target Shooter.exe"});
+            if(path.Text!="Target Shooter Data Folder Path HERE")
+                try { Process.Start(new ProcessStartInfo() {FileName = path.Text + "\\Target Shooter.exe"}); }
+                catch { MessageBox.Show("Unable to find exe file in this path.");}
+            else
+                MessageBox.Show("Complete data folder path field!!");
         }
 
         private void ConvertData(string content)
@@ -111,7 +115,7 @@ namespace UARTDataProvider
 
         private void SaveToFile(List<string> content)
         {
-            try { File.WriteAllLines(Application.StartupPath + "TargetShooterGame\\TargetShooter_Data\\Resources\\outputData.csv", content.ToArray()); }
+            try { File.WriteAllLines(path.Text +"\\Target Shooter_Data\\Resources\\outputData.csv", content.ToArray()); }
             catch { return; }
         }
     }
