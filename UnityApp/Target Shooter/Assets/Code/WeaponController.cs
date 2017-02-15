@@ -12,11 +12,13 @@ public class WeaponController : MonoBehaviour
     List<string> data;
 
     float delay = 0;
+    int previousMicroButtonState = 1;
 
 	void Update () 
     {
         if(CheckDelay()) SetPosition();
-	    if (Input.GetMouseButtonDown(0) && AmmoCounterController.GetCounterValue() > 0) Shoot();
+	    if (IsShootButtonClicked() && AmmoCounterController.GetCounterValue() > 0) Shoot();
+        if (data != null) previousMicroButtonState = int.Parse(data[3].Substring(1, 1));
 	    if (AmmoCounterController.GetCounterValue() == 0) TryReloading();
     }
 
@@ -26,11 +28,22 @@ public class WeaponController : MonoBehaviour
         delay += Time.deltaTime; return false; 
     }
 
+    bool IsShootButtonClicked()
+    {
+        return Input.GetMouseButtonDown(0) || IsMicroButtonClicked();
+    }
+
+    bool IsMicroButtonClicked()
+    {
+        return int.Parse(data[3].Substring(1, 1)) == 0 && previousMicroButtonState == 1;
+    }
+
     void SetPosition()
     {
         GetDataFromFile();
-        LookAround();
-        MoveHorizontally();
+        if (data == null) return;
+        RotateWeapon();
+        MakeJump();
     }
 
     void LookAround()
@@ -48,8 +61,31 @@ public class WeaponController : MonoBehaviour
 
     void MoveHorizontally()
     {
-        if (int.Parse(data[0]) > 3000) weaponTransform.position -= new Vector3(moveStep, 0, 0);
-        if (int.Parse(data[0]) < -3000) weaponTransform.position += new Vector3(moveStep, 0, 0);
+        if (int.Parse(data[0]) > 2250) weaponTransform.position -= new Vector3(moveStep, 0, 0);
+        if (int.Parse(data[0]) < -2250) weaponTransform.position += new Vector3(moveStep, 0, 0);
+    }
+
+    void RotateWeapon()
+    {
+        if (int.Parse(data[0]) > 2250) weaponTransform.Rotate(0, 1f, 0);
+        if (int.Parse(data[0]) < -2250) weaponTransform.Rotate(0, -1f, 0);
+    }
+
+    void MakeJump()
+    {
+        if (int.Parse(data[2]) > 6500) StartCoroutine(ExecuteJump());
+    }
+
+    IEnumerator<WaitForSeconds> ExecuteJump()
+    {
+        for (int i = 0; i < 15; i++) {
+            weaponTransform.position += new Vector3(0, 1f, 0);
+            yield return new WaitForSeconds(0.0167f);
+        }
+        for (int i = 0; i < 15; i++) {
+            weaponTransform.position += new Vector3(0, -1f, 0);
+            yield return new WaitForSeconds(0.0167f);
+        }
     }
 
     void Shoot()

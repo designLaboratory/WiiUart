@@ -12,8 +12,8 @@ Platform assembly: C:\Users\patrol17\Desktop\WiiUart_SM2_Project\TargetShooter\T
 Loading C:\Users\patrol17\Desktop\WiiUart_SM2_Project\TargetShooter\TargetShooterGame\Target Shooter_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
 Platform assembly: C:\Users\patrol17\Desktop\WiiUart_SM2_Project\TargetShooter\TargetShooterGame\Target Shooter_Data\Managed\UnityEngine.UI.dll (this message is harmless)
 Loading C:\Users\patrol17\Desktop\WiiUart_SM2_Project\TargetShooter\TargetShooterGame\Target Shooter_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
-- Completed reload, in  0.163 seconds
-desktop: 1366x768 60Hz; virtual: 3046x1050 at -1680,0
+- Completed reload, in  0.174 seconds
+desktop: 1366x768 60Hz; virtual: 1366x768 at 0,0
 <RI> Initializing input.
 <RI> Input initialized.
 <RI> Initialized touch support.
@@ -21,4 +21,18 @@ Platform assembly: C:\Users\patrol17\Desktop\WiiUart_SM2_Project\TargetShooter\T
 Platform assembly: C:\Users\patrol17\Desktop\WiiUart_SM2_Project\TargetShooter\TargetShooterGame\Target Shooter_Data\Managed\System.dll (this message is harmless)
 Shader 'Nature/Terrain/Standard': fallback shader 'Nature/Terrain/Diffuse' not found
 Setting up 1 worker threads for Enlighten.
-  Thread -> id: 196c -> priority: 1 
+  Thread -> id: c28 -> priority: 1 
+NullReferenceException: Object reference not set to an instance of an object
+  at WeaponController.IsMicroButtonClicked () [0x00000] in <filename unknown>:0 
+  at WeaponController.IsShootButtonClicked () [0x00000] in <filename unknown>:0 
+  at WeaponController.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at WeaponController.IsMicroButtonClicked () [0x00000] in <filename unknown>:0 
+  at WeaponController.IsShootButtonClicked () [0x00000] in <filename unknown>:0 
+  at WeaponController.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
