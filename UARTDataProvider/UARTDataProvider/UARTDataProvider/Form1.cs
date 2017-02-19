@@ -63,7 +63,7 @@ namespace UARTDataProvider
         private void GetData()
         {
             List<string> comData = comPort.ReadExisting().Split(new string[] {"\r\n"}, StringSplitOptions.RemoveEmptyEntries).ToList();
-            comData = comData.Where(s => (s.Substring(0, 1) == "x" && s.Substring(s.Length - 1, 1) == "F")).ToList();
+            comData = comData.Where(s => (s.Substring(0, 1) == "A" && s.Substring(s.Length - 1, 1) == "F")).ToList();
             foreach (string s in comData) { DisplayData(s); ConvertData(s);}
         }
 
@@ -109,7 +109,7 @@ namespace UARTDataProvider
         {
             List<string> temp = content.Split(new string[] {";"}, System.StringSplitOptions.RemoveEmptyEntries).ToList();
             temp = temp.Where(s => s != "F").ToList();
-            temp = temp.Select(s => s.Remove(0, 2)).ToList();
+            temp = temp.Select(s => s.Remove(0, 3)).ToList();
             SaveToFile(temp);
         }
 

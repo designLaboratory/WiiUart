@@ -13,11 +13,11 @@ public class StartGameController : MonoBehaviour {
         InfoLabelController.ShowStartGameInfo();
     }
 
-	void Update ()
+    void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) && !TimeLeftController.gameStarted)
             StartGame();
-	}
+    }
 
     void StartGame()
     {

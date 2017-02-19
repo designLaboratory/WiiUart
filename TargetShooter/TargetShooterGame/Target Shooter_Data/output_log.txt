@@ -12,7 +12,7 @@ Platform assembly: C:\Users\patrol17\Desktop\WiiUart_SM2_Project\TargetShooter\T
 Loading C:\Users\patrol17\Desktop\WiiUart_SM2_Project\TargetShooter\TargetShooterGame\Target Shooter_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
 Platform assembly: C:\Users\patrol17\Desktop\WiiUart_SM2_Project\TargetShooter\TargetShooterGame\Target Shooter_Data\Managed\UnityEngine.UI.dll (this message is harmless)
 Loading C:\Users\patrol17\Desktop\WiiUart_SM2_Project\TargetShooter\TargetShooterGame\Target Shooter_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
-- Completed reload, in  0.174 seconds
+- Completed reload, in  0.143 seconds
 desktop: 1366x768 60Hz; virtual: 1366x768 at 0,0
 <RI> Initializing input.
 <RI> Input initialized.
@@ -21,17 +21,61 @@ Platform assembly: C:\Users\patrol17\Desktop\WiiUart_SM2_Project\TargetShooter\T
 Platform assembly: C:\Users\patrol17\Desktop\WiiUart_SM2_Project\TargetShooter\TargetShooterGame\Target Shooter_Data\Managed\System.dll (this message is harmless)
 Shader 'Nature/Terrain/Standard': fallback shader 'Nature/Terrain/Diffuse' not found
 Setting up 1 worker threads for Enlighten.
-  Thread -> id: c28 -> priority: 1 
-NullReferenceException: Object reference not set to an instance of an object
-  at WeaponController.IsMicroButtonClicked () [0x00000] in <filename unknown>:0 
-  at WeaponController.IsShootButtonClicked () [0x00000] in <filename unknown>:0 
+  Thread -> id: 1254 -> priority: 1 
+FormatException: Input string was not in the correct format
+  at System.Int32.Parse (System.String s) [0x00000] in <filename unknown>:0 
+  at WeaponController.MakeJump () [0x00000] in <filename unknown>:0 
+  at WeaponController.SetPosition () [0x00000] in <filename unknown>:0 
   at WeaponController.Update () [0x00000] in <filename unknown>:0 
  
 (Filename:  Line: -1)
 
-NullReferenceException: Object reference not set to an instance of an object
-  at WeaponController.IsMicroButtonClicked () [0x00000] in <filename unknown>:0 
-  at WeaponController.IsShootButtonClicked () [0x00000] in <filename unknown>:0 
+FormatException: Input string was not in the correct format
+  at System.Int32.Parse (System.String s) [0x00000] in <filename unknown>:0 
+  at WeaponController.MakeJump () [0x00000] in <filename unknown>:0 
+  at WeaponController.SetPosition () [0x00000] in <filename unknown>:0 
+  at WeaponController.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+FormatException: Input string was not in the correct format
+  at System.Int32.Parse (System.String s) [0x00000] in <filename unknown>:0 
+  at WeaponController.TryReloading () [0x00000] in <filename unknown>:0 
+  at WeaponController.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+FormatException: Input string was not in the correct format
+  at System.Int32.Parse (System.String s) [0x00000] in <filename unknown>:0 
+  at WeaponController.TryReloading () [0x00000] in <filename unknown>:0 
+  at WeaponController.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+FormatException: Input string was not in the correct format
+  at System.Int32.Parse (System.String s) [0x00000] in <filename unknown>:0 
+  at WeaponController.TryReloading () [0x00000] in <filename unknown>:0 
+  at WeaponController.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+FormatException: Input string was not in the correct format
+  at System.Int32.Parse (System.String s) [0x00000] in <filename unknown>:0 
+  at WeaponController.TryReloading () [0x00000] in <filename unknown>:0 
+  at WeaponController.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+FormatException: Input string was not in the correct format
+  at System.Int32.Parse (System.String s) [0x00000] in <filename unknown>:0 
+  at WeaponController.TryReloading () [0x00000] in <filename unknown>:0 
+  at WeaponController.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+FormatException: Input string was not in the correct format
+  at System.Int32.Parse (System.String s) [0x00000] in <filename unknown>:0 
+  at WeaponController.TryReloading () [0x00000] in <filename unknown>:0 
   at WeaponController.Update () [0x00000] in <filename unknown>:0 
  
 (Filename:  Line: -1)
